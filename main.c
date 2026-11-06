@@ -1,6 +1,6 @@
-// runs PCMPESTRI xmm1, xmm1, 0 with EAX = EDX = 0x80000000 in unicorn.
+// runs PCMPESTRI xmm0, xmm1, 0 with EAX = EDX = 0x80000000 in unicorn.
 // real hardware runs this fine.
-// on the vulnerable build this exits with 0xC0000005 in pcmp_xstrx() (ops_sse.h).
+// on the vulnerable build this exits with 0xC0000005 in pcmpxstrx() (ops_sse.h).
 #include <stdio.h>
 #include <stdint.h>
 #include <unicorn/unicorn.h>
