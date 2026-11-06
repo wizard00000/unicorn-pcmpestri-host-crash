@@ -1,0 +1,14 @@
+main.exe
+crash.obj
+crash.ilk
+crash.pdb
+unicorn.dll
+unicorn/build/
+out.txt
+err.txt
+build.log
+vc140.pdb
+*.log
+*.log
+out.txt
+err.txt
