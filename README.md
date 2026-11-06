@@ -1,22 +1,19 @@
 # unicorn-pcmpestri-repro
 
-This shows how a single PCMPESTRI instruction terminates the host process in unicorn. On real hardware it just runs normally.
+Reproduces a Unicorn crash with `PCMPESTRI` and `EAX = EDX = 0x80000000`. The same instruction runs normally on regular hardware.
 
-## Setup
+## Requirements
 
-- MSVC 2022 x64
-- cmake
+- Windows x64
+- Visual Studio 2022 or 2026 (or Build Tools) with C++ x64 tools and a Windows SDK
+- Git and CMake
 
 ## Build and run
 
-```
+```bat
+git submodule update --init --recursive
 build.bat
 main.exe
 ```
 
-The process exits with 0xC0000005 on the `emu_start` call, which is the bug being reported.
-
-## Notes
-
-- `unicorn/` is a submodule pinned to `unicorn-engine/unicorn` dev @ `938efd13` (the vulnerable commit).
-- `build.bat` builds the submodule once into `unicorn/build`, then builds `main.exe`.
+On the pinned build (`938efd13`), `uc_emu_start` crashes with `0xC0000005`.
