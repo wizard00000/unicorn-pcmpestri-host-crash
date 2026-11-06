@@ -16,4 +16,4 @@ build.bat
 main.exe
 ```
 
-On the pinned build (`938efd13`), `uc_emu_start` crashes with `0xC0000005`.
+On the pinned build (`2a05c41`), `uc_emu_start` crashes with `0xC0000005`.
